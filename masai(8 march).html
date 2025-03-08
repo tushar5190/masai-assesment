@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Souled Store - Women</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}
+        .top-bar {background-color: #e41e26; color: white; display: flex; justify-content: space-between; padding: 10px 20px;}
+        .top-bar-left, .top-bar-right {display: flex; gap: 20px;}
+        .navbar {display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+        .logo {width: 120px; height: 40px; background: url('https://www.thesouledstore.com/static/img/300x157-logo.png') no-repeat; background-size: contain;}
+        .nav-menu {display: flex; gap: 20px;}
+        .nav-item {position: relative; font-weight: 600; font-size: 14px;}
+        .hot-tag, .new-tag {position: absolute; top: -8px; right: -15px; background: #e41e26; color: white; font-size: 10px; padding: 1px 3px; border-radius: 2px;}
+        .nav-icons {display: flex; gap: 15px;}
+        .hero-banner {position: relative; height: 400px; background: url('https://pplx-res.cloudinary.com/image/upload/v1741423729/user_uploads/XIFmMjiGzDrAepU/Screenshot-2025-03-08-140937.jpg') no-repeat center; background-size: cover;}
+        .banner-text {position: absolute; right: 50px; top: 50%; transform: translateY(-50%); color: white; text-align: right;}
+        .banner-text h2 {font-size: 36px; margin-bottom: 10px;}
+        .slider-controls {display: flex; justify-content: center; gap: 10px; margin: 20px 0;}
+        .slider-dot {width: 10px; height: 10px; border-radius: 50%; background-color: #ddd;}
+        .slider-dot.active {background-color: #008080;}
+        .section-header {text-align: center; margin: 40px 0 20px; font-size: 24px; font-weight: 700;}
+        .product-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 20px; margin-bottom: 40px;}
+        .product-card {background-color: white;}
+        .product-image {width: 100%; height: 250px; background-size: cover; background-position: center;}
+        .product-info {padding: 10px;}
+        .product-title {font-weight: 600; margin-bottom: 5px;}
+        .product-category {color: #777; font-size: 14px; margin-bottom: 5px;}
+        .product-price {font-weight: 700;}
+        .categories {display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 20px; margin-bottom: 40px;}
+        .category-card {position: relative; height: 200px; background-size: cover; background-position: center;}
+        .category-name {position: absolute; top: 20px; left: 20px; background-color: white; padding: 5px 10px; font-weight: 600;}
+        @media (max-width: 992px) {.product-grid {grid-template-columns: repeat(2, 1fr);} .categories {grid-template-columns: repeat(2, 1fr);}}
+        @media (max-width: 768px) {.nav-menu {display: none;}}
+        @media (max-width: 480px) {.product-grid, .categories {grid-template-columns: 1fr;}}
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-left"><div>WOMEN</div><div>MEN</div><div>KIDS</div></div>
+        <div class="top-bar-right"><div>India</div><div>TRACK ORDER</div><div>CONTACT US</div></div>
+    </div>
+    <nav class="navbar">
+        <div class="logo"></div>
+        <div class="nav-menu">
+            <div class="nav-item">NOMAD<span class="hot-tag">HOT</span></div>
+            <div class="nav-item">TOPWEAR</div><div class="nav-item">BOTTOMWEAR</div><div class="nav-item">BESTSELLERS</div>
+            <div class="nav-item">SNEAKERS</div><div class="nav-item">COLLECTIONS</div>
+            <div class="nav-item">ACCESSORIES<span class="new-tag">NEW</span></div><div class="nav-item">THEMES</div>
+        </div>
+        <div class="nav-icons"><div>🔍</div><div>👤</div><div>❤️</div><div>🛒</div></div>
+    </nav>
+    <div class="hero-banner"><div class="banner-text"><h2>URBAN BLAZE</h2><p>JUST LAUNCHED</p></div></div>
+    <div class="slider-controls"><div class="slider-dot active"></div><div class="slider-dot"></div><div class="slider-dot"></div></div>
+    <h2 class="section-header">NEW ARRIVALS</h2>
+    <div class="product-grid">
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423726/user_uploads/mXopZeJCuGfaKrr/Screenshot-2025-03-08-140947.jpg');"></div><div class="product-info"><div class="product-title">TSS Originals: Cloud 9</div><div class="product-category">Women Low Top Sneakers</div><div class="product-price">₹ 2899</div></div></div>
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423726/user_uploads/mXopZeJCuGfaKrr/Screenshot-2025-03-08-140947.jpg');"></div><div class="product-info"><div class="product-title">Wanderer's Whimsy</div><div class="product-category">Women Joggers</div><div class="product-price">₹ 1499</div></div></div>
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423726/user_uploads/mXopZeJCuGfaKrr/Screenshot-2025-03-08-140947.jpg');"></div><div class="product-info"><div class="product-title">Disney: Slow Sunday</div><div class="product-category">Women T-Shirts</div><div class="product-price">₹ 599</div></div></div>
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423726/user_uploads/mXopZeJCuGfaKrr/Screenshot-2025-03-08-140947.jpg');"></div><div class="product-info"><div class="product-title">ISRO: Logo</div><div class="product-category">Women Oversized T-Shirts</div><div class="product-price">₹ 899</div></div></div>
+    </div>
+    <h2 class="section-header">TRENDING NOW</h2>
+    <div class="product-grid">
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423725/user_uploads/mWEtrUlhnsSmLmb/Screenshot-2025-03-08-141020.jpg');"></div><div class="product-info"><div class="product-title">Gilmore Girls: You Have Been Gilmored</div><div class="product-category">Oversized T-Shirts</div><div class="product-price">₹ 799</div></div></div>
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423725/user_uploads/mWEtrUlhnsSmLmb/Screenshot-2025-03-08-141020.jpg');"></div><div class="product-info"><div class="product-title">Korean Pants: Rich Black</div><div class="product-category">Pants</div><div class="product-price">₹ 1999</div></div></div>
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423725/user_uploads/mWEtrUlhnsSmLmb/Screenshot-2025-03-08-141020.jpg');"></div><div class="product-info"><div class="product-title">Textured Shirt: Floral Bloom</div><div class="product-category">Shirts</div><div class="product-price">₹ 1399</div></div></div>
+        <div class="product-card"><div class="product-image" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423725/user_uploads/mWEtrUlhnsSmLmb/Screenshot-2025-03-08-141020.jpg');"></div><div class="product-info"><div class="product-title">Hello Kitty: Kawaii</div><div class="product-category">Shoes</div><div class="product-price">₹ 2999</div></div></div>
+    </div>
+    <h2 class="section-header">CATEGORIES</h2>
+    <div class="categories">
+        <div class="category-card" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423728/user_uploads/HLeDyFpYBvwkBqa/Screenshot-2025-03-08-140956.jpg');"><div class="category-name">TOPS</div></div>
+        <div class="category-card" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423728/user_uploads/HLeDyFpYBvwkBqa/Screenshot-2025-03-08-140956.jpg');"><div class="category-name">OVERSIZED T-SHIRTS</div></div>
+        <div class="category-card" style="background-image: url('https://pplx-res.cloudinary.com/image/upload/v1741423728/user_uploads/HLeDyFpYBvwkBqa/Screenshot-2025-03-08-140956.jpg');"><div class="category-name">PANTS</div></div>
+    </div>
+</body>
+</html>
