@@ -1,53 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>feedback form</title>
-    <style>
-        body{
-            background-color:lightgrey;
-        }
-        body{
-            border:2px solid ;
-            margin: 280px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Feedback Board</title>
+
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: white;
+      margin: 20px;
+      padding: 0;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 25px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid silver;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkblue;
+    }
+
+    .feedback-box {
+      background-color: lightblue;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .feedback-box.dark-mode {
+      background-color: gray;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 4px 7px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+
 </head>
-<body >
-    <h1>GIVE YOUR FEEDBACK</h1>
-    <div>
-        <form>
-            <table "border:2px solid red">
-                <tr>
-                    <td>
-                        Name:
-                    </td>
-                    <td>
-                        <input type="text" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Email:
-                    </td>
-                    <td>
-                        <input type="email" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        comments:
-                    </td>
-                    <td>
-                        <textarea required></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td><button>Submit</button></td>
-                </tr>
-            </table>
-        </form>
-    </div>
+<body>
+
+<div class="container">
+  <h1>Share Your Feedback</h1>
+
+  <button onclick="switchTheme()">Switch Theme</button>
+
+  <form id="formFeedback">
+    <input type="text" id="inputName" placeholder="Name" required>
+    <input type="email" id="inputEmail" placeholder="Email" required>
+    <textarea id="inputComment" placeholder="Your Feedback" rows="4" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="feedbackList"></div>
+</div>
+
+<script>
+  let themeDark = false;
+
+  function switchTheme() {
+    document.body.classList.toggle('dark-mode');
+    document.querySelectorAll('.feedback-box').forEach(item => {
+      item.classList.toggle('dark-mode');
+    });
+    themeDark = !themeDark;
+  }
+
+  document.getElementById('formFeedback').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('inputName').value.trim();
+    const email = document.getElementById('inputEmail').value.trim();
+    const comment = document.getElementById('inputComment').value.trim();
+
+    if(name !== '' && email !== '' && comment !== '') {
+      createFeedback(name, email, comment);
+
+      
+      document.getElementById('inputName').value = '';
+      document.getElementById('inputEmail').value = '';
+      document.getElementById('inputComment').value = '';
+    }
+  });
+
+  function createFeedback(name, email, comment) {
+    const feedbackList = document.getElementById('feedbackList');
+
+    const feedback = document.createElement('div');
+    feedback.className = 'feedback-box';
+    if (themeDark) {
+      feedback.classList.add('dark-mode');
+    }
+
+    feedback.innerHTML = `
+      <h3>${name}</h3>
+      <small>${email}</small>
+      <p>${comment}</p>
+      <button class="delete-btn" onclick="removeFeedback(this)">Delete</button>
+    `;
+
+    feedbackList.appendChild(feedback);
+  }
+
+  function removeFeedback(button) {
+    button.parentElement.remove();
+  }
+</script>
+
 </body>
 </html>
