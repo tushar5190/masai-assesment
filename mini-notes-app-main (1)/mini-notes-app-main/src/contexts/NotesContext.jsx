@@ -8,14 +8,14 @@ export const NotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Load notes from localStorage on initial render
+  
   useEffect(() => {
     try {
       const storedNotes = localStorage.getItem('notes');
       if (storedNotes) {
         setNotes(JSON.parse(storedNotes));
       } else {
-        // Add sample note if no notes exist
+        
         const sampleNotes = [
           {
             id: '1',
@@ -33,7 +33,7 @@ export const NotesProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  // Update localStorage whenever notes change
+ 
   useEffect(() => {
     try {
       localStorage.setItem('notes', JSON.stringify(notes));
